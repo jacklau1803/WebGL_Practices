@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+      <meta charset="utf-8"/>
+      <title> CMPS160_Jack_Liu_FinalProject </title>
+  </head>
+
+  <body onload = "main()">
+    <div>
+    <canvas id="webgl" width="400" height="400" style="position: absolute; z-index: 0">
+      Please use a browser that supports "canvas"
+    </canvas>
+    <canvas id="hud" width="400" height="400" style="position: absolute; z-index: 1"></canvas>
+    </div>
+    <div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <p></p>
+      <input type="button" id="clear" value="Clear Canvas">
+      <input type="button" id="redo" value="Clear the world">
+    </div>
+    <div>
+      <p></p>
+      <input type="button" id="add" value="Add Cube">
+      <input type="button" id="fog" value="Fog">
+      <input type="button" id="hudb" value="HUD">
+    </div>
+    <div>
+      <p>Shape Location:</p>
+      <label for="x">x</label>
+      <input type="range" id="x" name="x" min="0" max="7">
+      <label for="y">y</label>
+      <input type="range" id="y" name="y" min="0" max="7">
+      <label for="z">z</label>
+      <input type="range" id="z" name="z" min="0" max="7">
+    </div>
+    
+    <hr>
+    <div>
+      <h3>Design/Planning Document</h3>
+      <p>I am hoping to design a world that looks similar to Minecraft. However, this will add more creativity. It can take user's pic and modify the sky, cubes, and the floor (of course the size has to be the power of 2). It can also add shapes on demand. It will be a fun summary of what I learned from this class.</p>
+      <img src="https://pxt.azureedge.net/blob/750c4d95632f8432530b8a2a487b8ffdb6c43cb1/static/getting-started/chickenrain.gif" alt="What I want to achieve">
+      <h3>Advanced Methods</h3>
+      <ul>
+        <li>HUD</li>
+        <li>Fog</li>
+      </ul>
+      <h4>Not advanced</h4>
+      <p>Get new textures, find the right OBJ files, set up the world with objects in the right places.</p>
+      <h3>How to interact</h3>
+      <p>W for forward, S for backward, A for moving towards left, D for moving towards right. J for turning left, K for turning right.</p>
+      <p>Press clear canvas to clear the entire canvas, use clear world to clear the cubes in the world except for the wall.</p>
+      <p>Adjust xyz sliders and add cube to add a cube at the spot that you want it to appear. Press fog for dimming the light. Press HUD to turn on HUD.</p>
+    
+    <!-- Include external libs -->
+    <script src = "lib/webgl-utils.js"></script>
+    <script src = "lib/webgl-render.js"></script>
+    <script src = "lib/webgl-debug.js"></script>
+    <script src = "lib/webgl-loader.js"></script>
+    <script src = "lib/cuon-utils.js"></script>
+    <script src = "lib/cuon-matrix.js"></script>
+
+    <!-- Include shaders -->
+    <script src = "src/graphics/shaders/shader.js"></script>
+    <script src = "src/graphics/shaders/asg4.js"></script>
+
+    <!-- Include Base code -->
+    <script src = "src/graphics/geometry/vertex.js"></script>
+    <script src = "src/graphics/geometry/geometry.js"></script>
+    <script src = "src/graphics/geometry/shapes/cube.js"></script>
+    <script src = "src/graphics/geometry/shapes/square.js"></script>
+    <script src = "src/graphics/renderer.js"></script>
+    <script src = "src/graphics/scene.js"></script>
+    <script src = "src/graphics/camera.js"></script>
+    <script src = "src/main.js"></script>
+    <script src = "src/input.js"></script>
+  </body>
+</html>

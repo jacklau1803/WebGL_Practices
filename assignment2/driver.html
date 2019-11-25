@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+      <meta charset="utf-8"/>
+      <title> CMPS160_Jack_Liu_Assignment_2 </title>
+  </head>
+
+  <body onload = "main()">
+    <canvas id="webgl" width="400" height="400">
+      Please use a browser that supports "canvas"
+    </canvas>
+
+    <!-- Info fields -->
+    <p>x: <span id="x-axis"></span> y:<span id="y-axis"></span></p>
+    <!-- Other Button/Slider Fields -->
+        <button id = "clear">Clear Canvas</button>
+        Set OBJ: <input type="file" id="fileInput"/>
+        <button type="button" id="fileLoad">Add OBJ To Scene</button>
+      <p>Drawing Mode:</p>
+      <input type="button" id="square" value="Spining Squares">
+      <input type="button" id="triangle" value="Flutuating Triangle">
+      <input type="button" id="circle" value="Randomly Moving Circles">
+      <input type="button" id="cube" value="Titled cube">
+    <br>
+      <p>Shape Color:</p>
+      <label for="red">Red</label>
+      <input type="range" id="red" name="red" min="0" max="1" step="any">
+      <label for="Green">Green</label>
+      <input type="range" id="green" name="green" min="0" max="1" step="any">
+      <label for="blue">Blue</label>
+      <input type="range" id="blue" name="blue" min="0" max="1" step="any">
+    <br>
+      <label for="size">Shape Size:</label>
+      <input type="range" id="size" name="size" min="0" max="3" step="any">
+      <label for="count">(Circles) Segment Count:</label>
+      <input type="range" id="count" name="count" min="1" max="50" step="any">
+
+    <!-- Include external libs -->
+    <script src = "lib/webgl-utils.js"></script>
+    <script src = "lib/webgl-render.js"></script>
+    <script src = "lib/webgl-debug.js"></script>
+    <script src = "lib/webgl-loader.js"></script>
+    <script src = "lib/cuon-utils.js"></script>
+    <script src = "lib/cuon-matrix.js"></script>
+
+    <!-- Include shaders -->
+    <script src = "src/graphics/shaders/shader.js"></script>
+    <script src = "src/graphics/shaders/asg1.js"></script>
+
+    <!-- Include Base code -->
+    <script src = "src/graphics/geometry/vertex.js"></script>
+    <script src = "src/graphics/geometry/geometry.js"></script>
+    <script src = "src/graphics/geometry/shapes/triangle.js"></script>
+    <script src = "src/graphics/geometry/shapes/square.js"></script>
+    <script src = "src/graphics/geometry/shapes/circle.js"></script>
+    <script src = "src/graphics/geometry/shapes/cube.js"></script>
+    <script src = "src/graphics/geometry/shapes/custom.js"></script>
+    <script src = "src/graphics/renderer.js"></script>
+    <script src = "src/graphics/scene.js"></script>
+    <script src = "src/main.js"></script>
+    <script src = "src/input.js"></script>
+  </body>
+</html>
